@@ -11,3 +11,4 @@ L'e-commerce vende prodotti per animali.
 
 /*SOLUZIONE*/
 - per prima cosa creo le classi principali, ovvero Categoria (rappresenta le categorie Cani e Gatti), Prodotto (rappresenta un prodotto generico), Cibo, Gioco, Cuccia (queste tre rappresentano dei prodotti specifici), Shop (gestisce i prodotti)
+- creo una classe shop il cui scopo sarà gestire i prodotti e stampare le infomazioni in una struttura HTML, come una card.

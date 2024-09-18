@@ -82,4 +82,33 @@ var_dump($foodDogs);
 var_dump($gameCats);
 var_dump($kennelDogs);
 
+class Shop {
+    public $products = [];
+
+    public function addproduct(product $product) {
+        $this->products[] = $product;
+    }
+
+    public function showproducts() {
+        foreach ($this->products as $product) {
+            echo "<div class='card'>";
+            echo "<img src='{$product->image}' alt='{$product->title}' />";
+            echo "<h2>{$product->title}</h2>";
+            echo "<p>Price: €{$product->price}</p>";
+            echo "<p>Category: {$product->category->name}</p>";
+            echo "<p>Typ: {$product->productType}</p>";
+            echo "<img src='{$product->category->icon}' alt='Icon {$product->category->name}' />";
+            echo "</div>";
+        }
+    }
+}
+
+// Esempio di utilizzo:
+$shop = new Shop();
+$shop->addProduct($foodDogs);
+$shop->addProduct($gameCats);
+$shop->addProduct($kennelDogs);
+
+$shop->showProducts();
+
 ?>
