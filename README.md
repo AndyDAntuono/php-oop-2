@@ -14,3 +14,4 @@ L'e-commerce vende prodotti per animali.
 - creo una classe shop il cui scopo sarà gestire i prodotti e stampare le infomazioni in una struttura HTML, come una card.
 - modifico il file index.php in modo tale da aggiungere una porzone html il cui compito è far comparire a video le card rapprentanti i prodotti degli degli animali.
 - modifico il file index.php in modo di includere le immagini e le icone dei prodotti per gli animali.
+- modifico il file index.php per avere una resa grafica migliore.

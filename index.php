@@ -82,34 +82,8 @@ $kennelDogs = new Kennel("Cuccia Grande", 49.99, "wood-dog-kennel.jpg", $categor
 //var_dump($gameCats);
 //var_dump($kennelDogs);
 
-class Shop {
-    public $products = [];
-
-    public function addproduct(Product $product) {
-        $this->products[] = $product;
-    }
-
-    public function showProducts() {
-        foreach ($this->products as $product) {
-            echo "<div class='card'>";
-            echo "<img src='./img/{$product->image}' alt='{$product->title}' />";
-            echo "<h2>{$product->title}</h2>";
-            echo "<p>Price: €{$product->price}</p>";
-            echo "<p>Category: {$product->category->name}</p>";
-            echo "<p>Type: {$product->productType}</p>";
-            echo $product->category->icon;
-            echo "</div>";
-        }
-    }
-}
-
-// Esempio di utilizzo:
-$shop = new Shop();
-$shop->addProduct($foodDogs);
-$shop->addProduct($gameCats);
-$shop->addProduct($kennelDogs);
-
-$shop->showProducts();
+// Creiamo lo shop con i prodotti
+$shopProducts = [$foodDogs, $gameCats, $kennelDogs];
 
 ?>
 
@@ -122,15 +96,24 @@ $shop->showProducts();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>Negozio di prodotti per animali</h1>
+    
+<h1 class="text-center my-4">Negozio di prodotti per animali</h1>
     <div class="container">
         <div class="row">
-        <div class="col-4">
-            <?php
-                //mostra i prodotti del negozio
-                $shop->showProducts();
-            ?>
-        </div>
+            <?php foreach ($shopProducts as $product): ?>
+                <div class="col-4">
+                    <div class="card">
+                        <img src="./img/<?php echo $product->image; ?>" class="card-img-top" alt="<?php echo $product->title; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $product->title; ?></h5>
+                            <p class="card-text">Prezzo: €<?php echo $product->price; ?></p>
+                            <p class="card-text">Categoria: <?php echo $product->category->name; ?></p>
+                            <p class="card-text">Tipo: <?php echo $product->productType; ?></p>
+                            <div><?php echo $product->category->icon; ?></div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>
