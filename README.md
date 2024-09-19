@@ -26,3 +26,4 @@ Aggiungete almeno un Trait al vostro lavoro
 /*SOLUZIONE 18-09-24*/
 
 - inserico un expeption nella classe food riguardante la data di scadenza del cibo per animali.
+- Inserisco poi di proposito un altra eccezione che fa scattare quella riguardante la data di scandenza

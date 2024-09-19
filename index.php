@@ -92,6 +92,13 @@ $kennelDogs = new Kennel("Cuccia Grande", 49.99, "wood-dog-kennel.jpg", $categor
 // Creiamo lo shop con i prodotti
 $shopProducts = [$foodDogs, $gameCats, $kennelDogs];
 
+try {
+    // Questo genererà un'eccezione perché la data di scadenza è nel passato
+    $foodExpired = new Food("Cibo Scaduto", 15.99, "expired-food.jpeg", $categoryDogs, "2020-01-01");
+} catch (Exception $e) {
+    echo "Errore: " . $e->getMessage();
+}
+
 ?>
 
 <!DOCTYPE html>
