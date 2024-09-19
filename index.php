@@ -46,6 +46,13 @@ class Food extends Product {
 
     public function __construct($title, $price, $image, Category $category, $expiration) {
         parent::__construct($title, $price, $image, $category, "Cibo");
+
+        $today = date('Y-m-d');
+        if ($expiration < $today) {
+            // Lancia un'eccezione se la data di scadenza è già passata
+            throw new Exception("Il prodotto '$title' è scaduto. Data di scadenza: $expiration.");
+        }
+
         $this->expiration = $expiration;
     }
 }
